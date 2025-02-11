@@ -1,0 +1,759 @@
+menu {
+  /* position: relative; */
+  position:sticky;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+  z-index: +10;
+ }
+
+
+
+
+ /* body {
+  scroll-behavior: smooth;
+  transition-timing-function: ease-out;
+} */
+
+
+/* Apply scroll-snap settings to the body (scroll container) */
+body {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory; /* Enable scroll snapping */
+  scroll-snap-points-y: repeat(100%); /* Snap to each section */
+}
+
+/* Apply scroll-snap settings to the target element */
+#top {
+  scroll-snap-coordinate: 0% 100%;
+  scroll-snap-destination: 0% 100%;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  transition-duration: 10s; /* Adjust the duration as needed */
+}
+
+
+
+
+/* 
+  .bg_rectangle {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 80px;
+    min-width: 1440px;
+    max-width: 1440px;
+    min-height: 1500px;
+    margin-left: -16px;
+    align-content: center;
+    background-color: gray;
+    padding-top: -180px;
+    z-index: -1;
+  } */
+
+
+
+
+
+/*
+█▀ █▀▀ █▀▀ ▀█▀ █ █▀█ █▄░█  ▄█
+▄█ ██▄ █▄▄ ░█░ █ █▄█ █░▀█  ░█
+*/
+
+/* @media only screen and (max-width: 1460px) { */
+
+.intro {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fill, 144px);
+  grid-gap: 16px;
+  max-width: 1888px;
+  margin: auto;
+  /* min-width: 442px; */
+  /* margin: auto; */
+  margin-top: -80px;
+}
+
+/* .bg_rectangle {
+  grid-column: 1/ span 3;
+  grid-row: 1/span 2;
+  position: -webkit-sticky;
+  position: absolute;
+  top: 80px;
+  min-width: 1440px;
+  min-height: 590px;
+  margin-left: -16px;
+  border: 14px solid #000 !important;
+  padding-top: 80px;
+  z-index: -1;
+} */
+
+#intro1 {
+  grid-column: 2/ span 1;
+  grid-row: 1/ span 1;
+  color: #C6C6C6;
+  min-width: 442px;
+  align-self: end;
+}
+
+#intro2 {
+  grid-column: 2/ span 1;
+  grid-row: 2/ span 1;
+  min-width: 442px;
+  /* margin-top: -72px; */
+  /* margin-bottom: 120px; */
+}
+
+
+#intro3 {
+  grid-column: 2/ span 1;
+  grid-row: 3/span 1;
+  min-width: 442px;
+  /* margin-top: 5px; */
+  /* max-width: 100% */
+}
+
+#email {
+  grid-column: 2/ span 1;
+  grid-row: 4/span 1;
+  font-size: 16px;
+  margin-top: 10px;
+  /* max-width: 100% */
+}
+
+
+#linkedin {
+  grid-column: 2/ span 1;
+  grid-row: 5/span 1;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 5px;
+  /* max-width: 100% */
+}
+
+
+/*
+█▀ █▀▀ █▀▀ ▀█▀ █ █▀█ █▄░█  projects
+▄█ ██▄ █▄▄ ░█░ █ █▄█ █░▀█  ░█
+*/
+
+.allesprojecten {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fill, 144px);
+  grid-gap: 16px;
+  max-width: 1888px;
+  min-width: 288px;
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 64px;
+}
+
+
+.allesprojecten img {
+  transform: translateY(0); 
+  transition: transform 0.3s ease;
+}
+
+.allesprojecten img:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+    transition: transform 0.3s ease;
+  }
+
+
+
+
+#recharge {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 442px;
+}
+
+
+#recharge a img {
+  max-width: 100%;
+}
+
+
+
+#recharge_description {
+  grid-column: 3 / span 1;
+}
+
+#recharge_name {
+  font-family: neue-haas-grotesk-display;
+  /* display: inline-block; */
+  /* grid-column: 3 / span 1; */
+  grid-row: 1 / span 1;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+#recharge_desc {
+  font-family: neue-haas-grotesk-display;
+  /* display: inline-block; */
+  /* grid-column: 3 / span 1; */
+  grid-row: 2 / span 1;
+  /* margin-top: 24px; */
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-style: normal;
+  color: #aaaaaa;
+}
+
+#recharge_name b {
+  font-family: neue-haas-grotesk-display, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 500 !important;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+
+
+
+#webex {
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#webex a img {
+  max-width: 100%;
+}
+
+
+#webex_description {
+  grid-column: 3 / span 1;
+  grid-row: 3 / span 1;
+}
+
+#webex_name  {
+  grid-column: 3 / span 1;
+  grid-row: 3 / span 1;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+#webex_desc  {
+  grid-column: 3 / span 1;
+  grid-row: 3 / span 1;
+  /* margin-top: 24px; */
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-style: normal;
+  color: #aaaaaa;
+}
+
+
+
+
+
+
+#omnio {
+  grid-column: 2 / span 1;
+  grid-row: 4 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#omnio a img {
+  max-width: 100%;
+}
+
+#omnio_description {
+  grid-column: 3 / span 1;
+  grid-row: 4 / span 1;
+}
+
+#omnio_name  {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+#omnio_desc  {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-style: normal;
+  color: #aaaaaa;
+}
+
+
+
+
+
+
+#vrv {
+  grid-column: 2 / span 1;
+  grid-row: 5 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#vrv a img {
+  max-width: 100%;
+}
+
+#vrv_description {
+  grid-column: 3 / span 1;
+  grid-row: 5 / span 1;
+}
+
+#vrv_name  {
+  grid-column: 3 / span 1;
+  grid-row: 5 / span 1;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+#vrv_desc  {
+  grid-column: 3 / span 1;
+  grid-row: 5 / span 1;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-style: normal;
+  color: #aaaaaa;
+}
+
+
+
+
+
+
+#crunchy {
+  grid-column: 2 / span 1;
+  grid-row: 6 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#crunchy a img {
+  max-width: 100%;
+}
+
+#crunchy_description {
+  grid-column: 3 / span 1;
+  grid-row: 6 / span 1;
+  max-width: 320px;
+}
+
+#crunchy_name  {
+  grid-column: 3 / span 1;
+  grid-row: 6 / span 1;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+#crunchy_desc  {
+  grid-column: 3 / span 1;
+  grid-row: 6 / span 1;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-style: normal;
+  color: #aaaaaa;
+}
+
+
+
+
+
+
+
+#rooms {
+  grid-column: 2 / span 1;
+  grid-row: 7 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#rooms a img {
+  max-width: 100%;
+}
+
+#rooms_description {
+  grid-column: 3 / span 1;
+  grid-row: 7 / span 1;
+}
+
+#rooms_name  {
+  grid-column: 3 / span 1;
+  grid-row: 7 / span 1;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+#rooms_desc  {
+  grid-column: 3 / span 1;
+  grid-row: 7 / span 1;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-style: normal;
+  color: #aaaaaa;
+}
+
+
+
+
+
+#endavaevents {
+  grid-column: 2 / span 1;
+  grid-row: 8 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#endavaevents a img {
+  max-width: 100%;
+}
+
+#events_description {
+  grid-column: 3 / span 1;
+  grid-row: 8 / span 1;
+}
+
+#events_name  {
+  grid-column: 3 / span 1;
+  grid-row: 8 / span 1;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+#events_desc  {
+  grid-column: 3 / span 1;
+  grid-row: 8 / span 1;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-style: normal;
+  color: #aaaaaa;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+█▀ █▀▀ █▀▀ ▀█▀ █ █▀█ █▄░█  about
+▄█ ██▄ █▄▄ ░█░ █ █▄█ █░▀█  ░█
+*/
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fill, 144px);
+  grid-gap: 16px;
+  max-width: 1888px;
+  min-width: 288px;
+  margin-top: 40px;
+  margin: auto;
+  /* margin-top: 80px; */
+  margin-bottom: 64px;
+}
+
+
+
+#VictorTurculet, #Victor {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 3;
+  min-width: 442px;
+  /* max-width: 460px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+
+
+/* #VictorTurculet a img {
+  max-width: 100%;
+} */
+
+
+
+#about1 {
+  grid-column: 2/ span 1;
+  grid-row: 4/ span 1;
+}
+
+#about2 {
+  grid-column: 2/ span 1;
+  grid-row: 5/ span 1;
+}
+
+#note1 {
+  grid-column: 2/ span 1;
+  grid-row: 6/ span 1;
+  margin-top: 24px;
+}
+
+#note2 {
+  grid-column: 2/ span 1;
+  grid-row: 7/ span 1;
+}
+
+
+#backtotop {
+  grid-column: 2/ span 1;
+  grid-row: 8/span 1;
+  border-radius: 25px;
+  padding: 7px 8px;
+  width: 94px;
+  height: 37px;
+  text-align: center;
+  user-select: none;
+  background-color: #D9D9D9;
+  color: #000;
+  margin-top: 40px;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* #backtotop svg {
+  vertical-align: middle;
+  margin-left: 24px;
+} */
+
+
+/* .bg_rectangle {
+  display: none;
+  } */
+
+
+
+
+
+
+
+/*
+▀█▀ ▄▀█ █▄▄ █░░ █▀▀ ▀█▀
+░█░ █▀█ █▄█ █▄▄ ██▄ ░█░____________________________________________________________________________________________
+ */
+
+
+@media only screen and (max-width: 1025px) {
+  
+  #recharge_description, #recharge_name,  #recharge_desc {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+  }
+  
+
+  
+  #webex {
+    grid-row: 4 / span 1;
+  }
+
+  #webex_description, #webex_name, #webex_desc {
+    grid-column: 2 / span 1;
+    grid-row: 5 / span 1;
+  }
+  
+  
+  
+  #omnio {
+    grid-row: 6 / span 1;
+  }
+  
+ #omnio_description, #omnio_name, #omnio_desc {
+    grid-column: 2 / span 1;
+    grid-row: 7 / span 1;
+  }
+  
+  
+  
+  #vrv {
+    grid-row: 8 / span 1;
+  }
+  
+  
+  #vrv_description, #vrv_name, #vrv_desc  {
+    grid-column: 2 / span 1;
+    grid-row: 9 / span 1;
+  }
+  
+  
+  
+  #crunchy {
+    grid-row: 10 / span 1;
+  }
+  
+  #crunchy_description, #crunchy_name, #crunchy_desc  {
+    grid-column: 2 / span 1;
+    grid-row: 11 / span 1;
+    max-width: 100%;
+  }
+  
+  
+  
+  
+  #rooms {
+    grid-row: 12 / span 1;
+  }
+  
+  #rooms_description, #rooms_name, #rooms_desc  {
+    grid-column: 2 / span 1;
+    grid-row: 13 / span 1;
+  }
+  
+  
+  
+  #endavaevents {
+    grid-row: 14 / span 1;
+  }
+  
+ #events_description, #events_name, #events_desc  {
+    grid-column: 2 / span 1;
+    grid-row: 15 / span 1;
+  }
+
+  #recharge_name, #webex_name, #omnio_name, #vrv_name, #crunchy_name, #rooms_name,  #events_name {
+    margin-bottom: 2px;
+    margin-top: -2px;
+  }
+
+  #recharge_description, #webex_description, #omnio_description, #vrv_description, #crunchy_description, #rooms_description,  #events_description {
+    margin-bottom: 24px;
+  }
+
+
+  #VictorTurculet, #about1, #about2, #note1, #note2  {
+    grid-column: 2 / span 1;
+  }
+
+
+
+  /* .bg_rectangle {
+    display: none;
+    } */
+
+}
+
+
+
+/*
+█▀▄▀█ █▀█ █▄▄ █ █░░ █▀▀
+█░▀░█ █▄█ █▄█ █ █▄▄ ██▄____________________________________________________________________________________________
+*/
+
+@media only screen and (max-width: 480px) {
+
+
+  #intro1, #intro2, #intro3, #email, #linkedin  {
+    grid-column: 1 / span 3;
+    min-width: 100%;
+  }
+
+
+  /* .intro {
+    grid-column: 1 / span 3;
+    min-width: 100%;
+  }
+
+
+  .allesprojecten {
+    grid-column: 1 / span 3;
+    min-width: 100%;
+  } */
+
+
+
+  #recharge_description, #recharge, #recharge_name, #recharge_desc {
+    grid-column: 1 / span 3;
+    min-width: 100%;
+  }
+  
+  
+  #webex_description, #webex, #webex_name, #webex_desc {
+    grid-column: 1 / span 3;
+    min-width: 100%;
+  }
+  
+  
+  #omnio_description, #omnio, #omnio_name, #omnio_desc {
+    grid-column: 1 / span 3;
+    min-width: 100%;
+  }
+  
+  
+  #vrv_description, #vrv, #vrv_name, #vrv_desc {
+    grid-column: 1 / span 3;
+    min-width: 100%;
+  }
+  
+  
+  #crunchy_description, #crunchy, #crunchy_name, #crunchy_desc {
+    grid-column: 1 / span 3;
+    min-width: 100%;
+  }
+  
+  
+  #rooms_description, #rooms, #rooms_name, #rooms_desc {
+    grid-column: 1 / span 3;
+    min-width: 100%;
+  }
+  
+  
+  #events_description, #endavaevents,  #events_name, #events_desc {
+    grid-column: 1 / span 3;
+    min-width: 100%;
+  }
+
+
+/* 
+  .about {
+    grid-column: 1 / span 3;
+    min-width: 100%;
+  } */
+
+  
+ #VictorTurculet, #about1, #about2, #note1, #note2 {
+    grid-column: 1 / span 3;
+    min-width: 100%;
+  }
+
+  #Victor {
+    grid-column: 1 / span 3;
+    min-width: 100%;
+  }
+
+  #backtotop {
+    grid-column: 1/ span 1;
+  }
+
+
+
+  /* .bg_rectangle {
+  display: none;
+  } */
+
+
+
+}

@@ -1,0 +1,91 @@
+HTML stands for Hyper Text Markup Language
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Notes</title>
+    <h1>you gotta insert here the src to the css and fonts</h1>
+  </head>
+  <body>
+    <p style="color:green;">All the content usually goes here</p>
+    <p style="text-align:center;">All the content usually goes here</p>
+  </body>
+</html>
+
+
+
+<!--Notes-->
+<hr> // Horizontal Rule
+<br> // Line Break
+<pre>
+  I am
+  a premormatted
+  text
+</pre>
+<p title='John "ShotGun" Nelson'> // <!--use single quotes if the content has double quotes in the name -->
+
+
+
+
+<!--CSS can be added to HTML documents in 3 ways:
+
+Inline - by using the style attribute inside HTML elements
+Internal - by using a <style> element in the <head> section
+External - by using a <link> element to link to an external CSS file -->
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    <link rel="stylesheet" href="https://use.typekit.net/abu0qzu.css">
+    <style>
+    .p {
+        font-family: "Neue Haas Grotesk", "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 24px; /* Absolute - doesn't allow browsers to change the size / Relative - sets the size relative to the surrounding elements*/
+        font-weight: normal;
+        }
+        </style>
+        </body>
+
+
+
+<-- INSERTING CSS  ***********************************************************************/
+
+<-- External
+<head>
+<link rel="stylesheet" href="mystyle.css">
+</head>
+
+
+<-- Internal (should be placed after the external link)
+<head>
+<style>
+h1 {
+  color: maroon;
+  margin-left: 40px;
+}
+</style>
+
+
+<-- Inline
+<body>
+<h1 style="color:blue;text-align:center;">This is a heading</h1>
+<p style="color:red;">This is a paragraph.</p>
+</body>
+
+
+
+
+
+Span vs Div
+div - would take the full width of the browser. Fit underneath each other
+span - would only take the space it's content has. Cannot be given width and height unless you enable a display:block.

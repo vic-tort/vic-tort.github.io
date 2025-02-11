@@ -1,0 +1,832 @@
+CSS stands for Cascading Style Sheets
+CSS describes how HTML elements are to be displayed on screen, paper, or in other media
+
+
+SIZES
+  0.25
+  2.4em
+  40px
+  10vw - % viewport width
+  10wh - % viewport height
+
+
+
+
+SELECTORS
+  Type selectors
+    body {...}
+    section {...}
+    h1 {...}
+    a {...}
+
+    * {...} /* will take all elements */
+    e {...} /* all Elements h1, p...  */
+    E F {...} /* Descendant combinator - selects all elements within F, could be within ul and so on*/
+
+    E.classname {...} /*selects by class*/
+    E#idname {...} /*selects by id*/
+
+  Siblings selectors
+    h1 + p {...} /*only the p after the h1 will have this value */
+    h1 + h2 {...}
+    p + img {...} /*only the img after the p will have this value*/
+
+
+CSS Reset - rewrites the browser styles, it's in a separate file
+CSS Normalize - make the styles cross-browser
+
+
+
+
+/*////SELECTOR TYPES  ***********************************************************************
+- Simple <based on name(p,h1,h2), id="para1", class (.center)>
+- Combinator <specific relationship between them>
+- Pseudo-class <based on a certain state>
+- Pseudo-element <select and style a part of an element>
+- Attribute <based on attribute or atr. value> */
+
+p, h1, h2 {
+    color: red;
+    text-align: center;
+}
+
+#para1 {
+  text-align: center;
+  color: red;
+}
+
+.center {
+  text-align: center;
+  color: red;
+}
+
+/*multiple elements can be in the same class. This one selects only the <p> elements.*/
+p.center {
+  text-align: center;
+  color: red;
+}
+
+
+/*selects all elements on the page*/
+* {
+  text-align: center;
+  color: blue;
+}
+
+/*an element can take the properties of multiple classes*/
+<p class="center large">This paragraph refers to two classes.</p>
+
+
+/*Combinator Selectors
+Descendant selector [div p { ]- matches all elements that are descendants of a specified element.
+Child selector [div > p { ]- selects all elements that are the children of a specified element.
+Adjacent sibling selector [div + p { ] - used to select an element that is directly after another specific element.
+General sibling selector [div ~ p { ] - selects all elements that are siblings of a specified element.
+*/
+
+
+
+/*Attribute Selectors
+Style HTML elements that have specific attributes or attribute values. The attribute selectors can be useful for styling forms without class or ID
+a [target] { selector is used to select elements with a specified attribute.
+a [target="blank"] { selector is used to select elements with a specified attribute and value.
+a [title~="flower"] selector is used to select elements with an attribute value containing a specified word.
+[class|="top"] selector is used to select elements with the specified attribute starting with the specified value.
+[class$="test"] selector is used to select elements whose attribute value ends with a specified value.
+[class*="te"] selector is used to select elements whose attribute value contains a specified value.
+*/
+
+
+/*Pseudo Classes
+are used to define a special state of an element.
+*/
+
+selector:pseudo-class {
+  property: value;
+}
+
+
+a:link { /* unvisited link */
+  color: #FF0000;
+}
+
+a:visited { /* visited link */
+  color: #00FF00;
+}
+
+a:hover { /* mouse over link */
+  color: #FF00FF;
+}
+
+a:active { /* selected link */
+  color: #0000FF;
+}
+
+
+
+/*Pseudo Elements
+are used to style specified parts of an element.
+*/
+
+selector::pseudo-element {
+  property: value;
+}
+
+p::first-line { /*adds a special style to the first line of a text.*/
+  color: #ff0000;
+  font-variant: small-caps;
+}
+
+p::first-letter { /*adds a special style to the first letter of a text.*/
+  color: #ff0000;
+  font-size: xx-large;
+}
+
+h1::before { /*inserts some content before the content of an element.*/
+  content: url(smiley.gif);
+}
+
+h1::after { /*inserts some content after the content of an element.*/
+  content: url(smiley.gif);
+}
+
+::selection {
+  color: #000;
+  background: #ff6c32;
+}
+
+
+
+/* if you use the !important rule, it will override ALL previous styling rules for that specific property on that element!*/
+
+p {
+  background-color: red !important;
+}
+
+
+
+
+
+
+
+
+
+
+/* CSS DISPLAY --------------------------------------------------------------------------------------------------------------------------------------
+Controls the layout. The :display: property specifies how an element is displayed or if to display it at all */
+
+li {
+  display: inline; /* would display a list of elements vertically */
+  display: block; /* would display a list of elements horizontally in a block */
+  display: inline-block; /*list of blocks shown inline, one after another*/
+  display: none; /* would hide the elements, and they would not take any space */
+  visibility: hidden; /* would hide the elements, but would still keep the alocated space */
+}
+
+
+
+/* POSITION ------------------------------------------------------------------------------------------------------------------------------------------
+relative - the element’s original position still keeps the space, while the element can be nudged in any direction over other elements.
+absolute - the element doesn't take any space and other elements will behave as if it’s not even there whilst all the other positional properties will work on it.
+fixed - almost the same as absolute, but the elements are always relative to the document, not any particular parent, and are unaffected by scrolling.
+sticky (experimental) - the element is treated like a relative value until the scroll location of the viewport reaches a specified threshold, at which point the element takes a fixed position where it is told to stick.
+inherit - the position value doesn’t cascade, so this can be used to specifically force it to, and inherit the positioning value from its parent.
+static - not really used - every element has a static position by default, so the element will stick to the normal page flow. */
+
+div.relative {
+  position: relative;
+  left: 30px; /*Moves the element 30px to the left*/
+  top: 50px;
+  background: #73AD21;
+}
+
+div.fixed {
+  position: fixed; /*The element would be fixed to the bottom right corner, it won't move with the scroll*/
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 3px solid #73AD21;
+}
+
+.element {
+  position: sticky; top: 50px;
+}
+
+img {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1; /*z-index decides the ordering, just like layers in sketch do, also, positioned elements appear on top of unpositioned*/
+}
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CSS BOX MODEL
+Content - The content of the box, where text and images appear
+Padding - Clears an area around the content. The padding is transparent
+Border - A border that goes around the padding and content
+Margin - Clears an area outside the border. The margin is transparent */
+
+div {
+  width: 300px;
+  border: 10px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+
+
+
+/*//BORDERS /////////////////// dotted / dashed / solid   ************************************/
+p.one {
+  border-style: solid;
+  border-color: red green blue yellow; /* top/right/bottom/left*/
+  border-width: 5px 20px; /* 5px top and bottom, 20px on the sides */
+  border-bottom-style: dotted;
+  border-radius: 5px;}
+
+
+  #rounded-corners2 {
+    border-radius: 25px; /* border radius */
+    border: 2px solid #73AD21; /* shorthand */
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+    box-shadow: 10px 10px yellow;
+  }
+
+
+
+/*//MARGINS   ********************************************************************************/
+
+p {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+
+/* Shorthand */
+
+p {
+  margin: 25px 50px 75px 100px;
+}
+
+p {
+  margin: 25px 50px 75px; /* top, right+left, bottom */
+}
+
+
+/* centers the content */
+div {
+  border: 1px solid red;
+  margin: auto;
+}
+
+p.ex1 {
+  margin-left: inherit; /*inherits the margin from the parent div */
+}
+
+
+
+/*///PADDINGS / generate space around an element inside defined borders.   *******************/
+
+div {
+  border: 1px solid black;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+
+div {
+  width: 300px;
+  padding: 25px;
+  box-sizing: border-box; /* without the box sizing, the div would be 350px */
+}
+
+
+/*///HEIGHT and WIDTH ///// auto / length / % / initial / inherit /   ************************
+The height and width properties do not include padding, borders, or margins
+They set the height/width of the area inside the padding, border, and margin of the element*/
+
+div {
+  height: 200px;
+  width: 50%; /* because it's in %, it will always go 50% of the screen */
+  background-color: powderblue;
+}
+
+div {
+  max-width: 500px; /* max-width makes the element flexible if the page goes smaller than 500px */
+  min-width: 200px;
+  height: 100px;
+  background-color: powderblue;
+}
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------
+OVERFLOW
+Specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area.
+
+visible - Default. The overflow is not clipped. The content renders outside the element's box
+hidden - The overflow is clipped, and the rest of the content will be invisible
+scroll - The overflow is clipped, and a scrollbar is added to see the rest of the content
+auto - Similar to scroll, but it adds scrollbars only when necessary
+
+The overflow-x and overflow-y properties specifies whether to change the overflow of content horizontally or vertically (or both) */
+
+div {
+  background-color: #eee;
+  width: 200px;
+  height: 50px;
+  overflow: auto;
+}
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------
+FLOAT
+Specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area.
+
+left - The element floats to the left of its container
+right - The element floats to the right of its container
+none - The element does not float (will be displayed just where it occurs in the text). This is default
+inherit - The element inherits the float value of its parent */
+
+img {
+  float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* IMAGES --------------------------------------------------------------------------------------------------------------------------------------
+The object-fit property can take one of the following values. Works with video as well.
+cover - The image keeps its aspect ratio and fills the given dimension. The image will be clipped to fit
+contain - The image keeps its aspect ratio, but is resized to fit within the given dimension
+scale-down - the image is scaled down to the smallest version of none or contain */
+
+
+img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  object-position: 15% 100%;
+}
+
+img {
+  width: 200px;
+  height: 300px;
+  object-fit: scale-down;
+  object-position: top;
+}
+
+
+
+
+/*////COLORS   *******************************************************************************/
+Use RGB if you plan on using the alpha channel feature.
+
+
+<head>
+<style>
+body {
+  background-color: rgba(0, 128, 0, 0.1);
+}
+
+
+<style>
+h1 {
+  background-color: green;
+  opacity: 0.3;
+}
+
+<style>
+body {
+  background-image: url("gradient_bg.png");
+  background-repeat: repeat-x;
+}
+
+
+/*////GRADIENTS
+Linear Gradients (goes down/up/left/right/diagonally)
+Radial Gradients (defined by their center)*/
+
+#linear-gradients {
+  background-image: linear-gradient(red, yellow); /*top to bottom*/
+  background-image: linear-gradient(to right, red , yellow); /*left to right*/
+  background-image: linear-gradient(to bottom right, red, yellow); /*diagonal */
+  background-image: linear-gradient(180deg, red, yellow); /*angled / 0deg is top / 90deg to right / 180deg to bottom */
+  background-image: linear-gradient(red, yellow, green); /*multiple colors*/
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /*fades*/
+}
+
+#radial-gradients {
+  background-image: radial-gradient(red, yellow, green); /*elipse center to outside, evenly spaced colors*/
+  background-image: radial-gradient(red 5%, yellow 15%, green 60%); /*differently spaced color stops*/
+  background-image: radial-gradient(circle, red, yellow, green); /*circle shaped*/
+}
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------
+CSS TEXT */
+
+<body>
+<link rel="stylesheet" href="https://use.typekit.net/abu0qzu.css">
+<style>
+.p {
+  font-family: "Neue Haas Grotesk", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 24px; /* Absolute - doesn't allow browsers to change the size / Relative - sets the size relative to the surrounding elements*/
+  font-weight: normal;
+}
+
+
+p {
+  color: blue;
+  text-transform: uppercase; /* lowercase / capitalize */
+  text-indent: 50px; /* Specifies the identation of the first row of text */
+  letter-spacing: -3px;
+  line-height: 0.8;
+  text-decoration: line-through; /* <a> to none to remove underlines from links / overline / line-through / underline */
+  text-align: justify; /* left/right/center */
+}
+
+
+p {
+  direction: rtl; /*right to left*/
+  writing-mode: vertical-rl; /*writes the text vertically*/
+  unicode-bidi: bidi-override; /* mirrored text */
+  word-spacing: 10px; /* spacing between words */
+  white-space: nowrap; /* makes the text to go in one long line */
+  text-shadow: 2px 2px 5px red; /*horizontal-vertical-blur-color*/
+  font-variant: small-caps;
+}
+
+img.top {
+  vertical-align: top; /* top/ middle / bottom / for when there's an image in the text box*/
+}
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------
+LINKS
+a:link - a normal, unvisited link
+a:visited - a link the user has visited
+a:hover - a link when the user mouses over it
+a:active - a link the moment it is clicked
+! this exact order should be maintained. */
+
+/* REMEMBER THIS ORDER */
+
+a:link {
+  color: red;
+  text-decoration: none;
+  cursor: crosshair; /* changes the cursor style / e-resize / pointer / progress */
+}
+
+a:hover {
+  color: green;
+  font-size: 150%;
+  font-family: Courier, monospace;
+}
+
+
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------
+Opacity - values from 0.0 - 1.0. If you do not want to apply opacity to child elements(texts in the elems), use RGBA color values.*/
+
+img {
+  opacity: 0.5;
+}
+
+img:hover {
+  opacity: 1.0;
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------
+TRANSFORMS
+*/
+
+div {
+  transform: translate(50px, 100px); /*moves the element 50 pixels to the right, and 100 pixels down*/
+  transform: rotate(20deg); /*rotates the element clockwise with 20 degrees, negative rules will rotate counter clockwise*/
+  transform: scale(2, 3); /*increases the element to be two times of its original width, and three times of its original height*/
+  transform: scale(0.5, 0.5); /*decreases the element to be half of its original width and height*/
+  transform: scaleX(2); /*increases the element to be two times of its original width*/
+  transform: scaleY(3); /*increases the element to be three times of its original height*/
+  transform: skew(20deg, 10deg); /*skews an element along the X-axis and Y-axis by the given angle*/
+  transform: skewX(20deg); /*skews an element along the X-axis by the given angle*/
+  transform: skewY(20deg); /*skews an element along the Y-axis by the given angle*/
+  transform: matrix(1, -0.3, 0, 1, 0, 0); /*Combines all the 2D transform methods into one / matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())*/
+}
+
+div {
+  transform: rotateX(150deg); /*rotates the element around it's X-axis at the given degree*/
+  transform: rotateY(120deg); /*rotates the element around it's Y-axis at the given degree*/
+  transform: rotateZ(190deg); /*rotates the element around it's Z-axis at the given degree*/
+  transform: rotate3d(x,y,z,angle); /*defines a 3d rotation*/
+}
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------
+TRANSITIONS
+- Specify the CSS property you want to add an effect to
+- Specify the duration of the effect
+
+ease - specifies a transition effect with a slow start, then fast, then end slowly
+linear - specifies a transition effect with the same speed from start to end
+ease-in - specifies a transition effect with a slow start
+ease-out - specifies a transition effect with a slow end
+ease-in-out - specifies a transition effect with a slow start and end
+cubic-bezier(n,n,n,n) - lets you define your own values in a cubic-bezier function
+*/
+
+div { /*before animation*/
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s, height 4s, background 2s, transform 2s; /*increases the width and height while transforming, with a 2s duration*/
+  transition-delay: 1s; /*adds a 1s delay*/
+  transition-timing-function: ease-out;
+}
+
+div:hover { /*after animation*/
+  width: 300px;
+  height: 300px;
+  background: blue;
+  transform: rotate(180deg);
+}
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------
+ANIMATIONS
+
+animation-fill-mode: value;
+none - Default value. Animation will not apply any styles to the element before or after it is executing
+forwards - The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count)
+backwards - The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during the animation-delay period
+both - The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions
+*/
+
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-delay: -2s; /*will look as if the animation been playing for 2s*/
+  animation-iteration-count: 3; /*infinite; to loop it*/
+  animation-direction: normal; /*reverse / alternate(forwards first, then backwards) / alternate-reverse */
+  animation-timing-function: ease;
+}
+
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+
+
+
+
+/* MEDIE QUERIES ---------------------------------------------------------------
+@media (min-width: 40em) and (max-width: 59em)
+@media (40em <= width <= 59em )
+
+<link rel="stylesheet" media="mediatype and|not|only (expressions)" href="mobile.css"> - you can create different stylesheets for diferent devices*/
+
+
+body {
+  background-color: tan;
+  color: black;
+}
+
+@media screen and (max-width: 992px) { /* On screens that are 992px wide or less, the background color is blue */
+  body {
+    background-color: blue;
+    color: white;
+  }
+}
+
+@media screen and (min-height: 500px) { /* On screens that are 600px high, the background color is olive */
+  body {
+    background-color: olive;
+    color: white;
+  }
+}
+
+
+
+_________________________
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;/* Container for flexboxes */
+}
+
+.column {
+  flex: 25%; /* Create four equal columns */
+  padding: 20px;
+}
+
+@media screen and (max-width: 992px) {
+  .column {
+    flex: 50%; /* On screens that are 992px wide or less, go from four columns to two columns */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column; /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;"></div>
+  <div class="column" style="background-color:#bbb;"></div>
+  <div class="column" style="background-color:#ccc;"> </div>
+  <div class="column" style="background-color:#ddd;"></div>
+</div>
+
+
+
+
+/* min and max width query */
+@media screen and (max-width: 900px) and (min-width: 600px) {
+  div.example {
+    font-size: 50px;
+}
+/* When the width is between 600px and 900px OR above 1100px - change the appearance of <div> */
+@media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px) {
+  div.example {
+    font-size: 50px
+}
+
+
+
+/* FLEXBOX-----------------------------------------------------------------------------------------
+The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
+
+The flex container properties are:
+flex-direction: column/row; - defines the stack direction.
+flex-wrap: wrap/nowrap; - defines if the elements should wrap inside the container.
+flex-flow: row wrap; - shorthand for direction+wrap.
+justify-content: center/flex-start/flex-end/space-around/space-between; - justifies the items
+align-items: stretch/baseline/center/flex-start/flex-end/
+align-content: space-between/space-around/stretch/center/flex-start/flex-end/
+*/
+
+
+
+CHILD Elements
+
+<div class="flex-container">
+  <div style="order: 3">1</div> - /*will display it as the third item */
+  <div style="flex-grow: 8">2</div> - /*specifies how much a flex item will grow relative to the rest of the flex items. */
+  <div style="flex-shrink: 0">3</div> -  /*specifies how much a flex item will shrink relative to the rest of the flex items. */
+  <div style="flex-basis: 200px">4</div> - /*specifies the initial length of a flex item. */
+  <div style="align-self: flex-start">5</div> /*/flex-end/center/ - specifies the alignment for the selected item, overrides the container alignment */
+</div>
+
+
+
+--------------------
+<style>
+.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+</style>
+
+
+BODY
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+
+------
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+/* GRIDS */
+
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.item1 {
+  grid-column: 1 / span 4;
+}
+
+.item2 {
+  grid-column: 5 / span 5;
+}
+
+.item3 {
+  grid-column: 10 / span 2;
+}
+
+.item4 {
+  grid-column: 12 / span 1;
+}
+</style>
+</head>
+<body>
+
+<h1>The grid-column Property</h1>
+
+<p>Use the <em>grid-column</em> property to specify where to place an item.</p>
+<p>Item1 will start on column-line 1 and span 3 columns:</p>
+
+<div class="grid-container">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+</div>
+
+</body>

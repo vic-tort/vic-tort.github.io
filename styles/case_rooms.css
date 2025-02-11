@@ -1,0 +1,276 @@
+#hero {
+  grid-column: 2/ span 10;
+  grid-row: 4/span 2;
+  max-width: 100%;
+  margin-top: 80px;
+}
+
+#projectyear {
+  background-color: #F4F2ED;
+  color: #AAA;
+}
+
+.description h3 {
+  grid-column: 2/ span 6;
+  grid-row: 6/span 1;
+  min-width: 240px;
+}
+
+
+/*
+█▀ █▀▀ █▀▀ ▀█▀ █ █▀█ █▄░█  ▄█
+▄█ ██▄ █▄▄ ░█░ █ █▄█ █░▀█  ░█
+*/
+
+.section1 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(auto-fill, 144px);
+  grid-gap: 16px;
+  max-width: 1888px;
+  min-width: 288px;
+  margin: auto;
+  margin-top: 200px;
+}
+
+#section1_title {
+  grid-column: 6/ span 6;
+  grid-row: 1/ span 1;
+  align-self: end;
+}
+
+#section1_description {
+  grid-column: 6/ span 6;
+  grid-row: 2/ span 1;
+  margin-top: -8px;
+  margin-bottom: 120px;
+}
+
+
+#rooms_img1 {
+  grid-column: 6/ span 7;
+  grid-row: 3/span 3;
+  /* margin-top: 5px; */
+  max-width: 100%
+}
+
+#rooms_img2 {
+  grid-column: 1/ span 5;
+  grid-row: 4/span 2;
+  max-width: 100%;
+  align-self: end;
+}
+
+#rooms_img3 {
+  grid-column: 6/ span 5;
+  grid-row: 6/span 2;
+  max-width: 100%;
+  /* box-shadow: 172px 172px #F4F2ED; */
+}
+
+#rooms_img3_desc {
+  min-width: 200px;
+  grid-column: 6/ span 5;
+  grid-row: 8/ span 1;
+  visibility: hidden;
+}
+
+
+
+#rooms_img4 {
+  grid-column: 2/ span 10;
+  grid-row: 9/span 1;
+  max-width: 100%;
+  margin-top: 156px;
+}
+
+#rooms_img4_desc {
+  grid-column: 2/ span 3;
+  grid-row: 10/ span 1;
+  min-width: 240px;
+}
+
+
+#rooms_img5 {
+  grid-column: 5/ span 7;
+  grid-row: 10/span 1;
+  max-width: 100%;
+}
+
+#rooms_img5_desc {
+  grid-column: 5/ span 5;
+  grid-row: 11/ span 1;
+  min-width: 240px;
+}
+
+
+
+/*
+▀█▀ ▄▀█ █▄▄ █░░ █▀▀ ▀█▀
+░█░ █▀█ █▄█ █▄▄ ██▄ ░█░
+ */
+
+
+@media only screen and (max-width: 1025px) {
+
+  #hero {
+    grid-column: 1/ span 12;
+  }
+
+  .description h3 {
+    grid-column: 1/ span 9;
+  }
+
+  #section1_title {
+    grid-column: 6/ span 7;
+  }
+
+  #section1_description {
+    grid-column: 6/ span 7;
+  }
+
+  #rooms_img1 {
+    align-self: end;
+  }
+
+  #rooms_img3_desc {
+    grid-column: 6/ span 5;
+  }
+
+
+
+  #rooms_img4 {
+    grid-column: 1/ span 12;
+    grid-row: 9/span 1;
+    max-width: 100%;
+    margin-top: 156px;
+  }
+
+  #rooms_img4_desc {
+    grid-column: 1/ span 4;
+    grid-row: 10/ span 1;
+    min-width: 240px;
+  }
+
+
+  #rooms_img5 {
+    grid-column: 5/ span 8;
+    grid-row: 10/span 1;
+    max-width: 100%;
+  }
+
+  #rooms_img5_desc {
+    grid-column: 5/ span 8;
+    grid-row: 11/ span 1;
+    min-width: 240px;
+  }
+
+}
+
+
+
+/*
+█▀▄▀█ █▀█ █▄▄ █ █░░ █▀▀
+█░▀░█ █▄█ █▄█ █ █▄▄ ██▄
+*/
+
+@media only screen and (max-width: 641px) {
+
+  #hero {
+    grid-column: 1/ span 12;
+    grid-row: 5/span 2;
+    margin-top: 56px;
+  }
+
+
+  .description h3 {
+    grid-column: 1/ span 12;
+    grid-row: 7/span 1;
+  }
+
+  #section1_title {
+    grid-column: 1/ span 12;
+  }
+
+  #section1_description {
+    grid-column: 1/ span 12;
+    margin-bottom: 64px;
+  }
+
+  .section1 {
+    margin-top: 56px;
+  }
+
+  #rooms_img1 {
+    grid-column: 1/ span 12;
+    grid-row: 3/span 1;
+  }
+
+  #rooms_img2 {
+    grid-column: 1/ span 12;
+    grid-row: 4/span 1;
+  }
+
+  #rooms_img3 {
+    grid-column: 1/ span 12;
+    grid-row: 5/span 1;
+  }
+
+  #rooms_img4 {
+    grid-column: 1/ span 12;
+    grid-row: 6/span 1;
+  }
+
+  #rooms_img5 {
+    grid-column: 1/ span 12;
+    grid-row: 8/span 1;
+  }
+
+  #rooms_img3_desc {
+    grid-column: 1/ span 12;
+    grid-row: 6/ span 1;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  #rooms_img4_desc {
+    grid-column: 1/ span 12;
+    grid-row: 7/ span 1;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  #rooms_img5_desc {
+    grid-column: 1/ span 12;
+    grid-row: 9/ span 1;
+    margin-top: 0;
+    margin-bottom: 80px;
+    /* margin-bottom: 56px; */
+  }
+
+  .footer_content #teamlist {
+    /* grid-column: 1/ span 4;
+    text-align: left;
+    color: #AAAAAA; */
+    visibility: hidden;
+  }
+
+  .footer_content #team {
+    grid-column: 1/ span 6;
+    /* grid-row: 13/ span 1; */
+    text-align: left;
+  }
+
+
+  #sayhi, #email {
+  display: none;
+  }
+
+  .square {
+  display: none;
+  }
+
+
+
+
+}
