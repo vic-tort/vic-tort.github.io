@@ -10,6 +10,11 @@ menu {
  }
 
 
+ /* .allesprojecten b {
+  font-weight: 600;
+} */
+
+
 
 
  /* body {
@@ -187,7 +192,7 @@ body {
 }
 
 #recharge_name {
-  font-family: neue-haas-grotesk-display;
+  font-family: "neue-haas-grotesk-display";
   /* display: inline-block; */
   /* grid-column: 3 / span 1; */
   grid-row: 1 / span 1;
@@ -196,7 +201,7 @@ body {
 }
 
 #recharge_desc {
-  font-family: neue-haas-grotesk-display;
+  font-family: "neue-haas-grotesk-display";
   /* display: inline-block; */
   /* grid-column: 3 / span 1; */
   grid-row: 2 / span 1;
@@ -209,8 +214,8 @@ body {
 }
 
 #recharge_name b {
-  font-family: neue-haas-grotesk-display, "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: 500 !important;
+  font-family: "neue-haas-grotesk-display";
+  font-weight: 600;
   font-style: normal;
   font-size: 16px;
   line-height: 1.2;
@@ -239,6 +244,7 @@ body {
 
 #webex_name  {
   grid-column: 3 / span 1;
+  /* font-weight: 600; */
   grid-row: 3 / span 1;
   font-size: 16px;
   line-height: 1.2;

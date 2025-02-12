@@ -5,10 +5,6 @@
   margin-top: 56px;
 }
 
-/* .description #hero{
-  grid-column: 2/ span 10;
-  grid-row: 3/span 2;
-} */
 
 #projectyear {
   background-color: #54B8E8;
@@ -23,39 +19,6 @@
 }
 
 
-#teamlist {
-  grid-column: 2/ span 3;
-}
-
-
-/*
-█▀ █▀▀ █▀▀ ▀█▀ █ █▀█ █▄░█  ▄█
-▄█ ██▄ █▄▄ ░█░ █ █▄█ █░▀█  ░█
-*/
-
-/* .section1 {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(auto-fill, 144px);
-  grid-gap: 16px;
-  max-width: 1888px;
-  min-width: 288px;
-  margin: auto;
-  margin-top: 200px;
-}
-
-#section1_title {
-  grid-column: 6/ span 6;
-  grid-row: 1/ span 1;
-  align-self: end;
-}
-
-#section1_description {
-  grid-column: 6/ span 6;
-  grid-row: 2/ span 1;
-  margin-top: -8px;
-  margin-bottom: 120px;
-} */
 
 
 
@@ -67,21 +30,16 @@
 
 @media only screen and (max-width: 1025px) {
 
-  #hero {
-    grid-column: 1/ span 12;
+  .description #hero {
+    grid-column: 3/ span 8;
+    grid-row: 3/span 2;
+    max-width: 100%;
+    margin-top: 56px;
   }
 
   .description h3 {
-    grid-column: 1/ span 9;
+    grid-column: 3/ span 8;
   }
-
-  #teamlist {
-    grid-column: 1/ span 3;
-  }
-
-  /* #teamlist #team {
-    grid-row: 5/ span 2;
-  } */
 
 
 }
@@ -95,32 +53,18 @@
 
 @media only screen and (max-width: 641px) {
 
-  #hero {
+  .description #hero {
     grid-column: 1/ span 12;
-    grid-row: 5/span 2;
+    grid-row: 3/span 2;
+    max-width: 100%;
     margin-top: 56px;
   }
 
-
   .description h3 {
     grid-column: 1/ span 12;
-    grid-row: 7/span 1;
   }
 
- 
 
-  .footer_content #teamlist {
-    /* grid-column: 1/ span 4;
-    text-align: left;
-    color: #AAAAAA; */
-    visibility: hidden;
-  }
-
-  .footer_content #team {
-    grid-column: 1/ span 6;
-    /* grid-row: 13/ span 1; */
-    text-align: left;
-  }
 
 
   #sayhi, #email {
